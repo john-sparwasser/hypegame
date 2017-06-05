@@ -17,14 +17,14 @@
             "error",
             "unix"
         ],
-        "quotes": [
-            "error",
-            "double"
-        ],
         "semi": [
             "error",
             "never"
+        ],
+        "console": [
+            "allow"
         ]
+
     },
     "globals": {
         "use": true,

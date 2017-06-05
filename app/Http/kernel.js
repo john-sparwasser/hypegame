@@ -12,11 +12,14 @@ const Middleware = use('Middleware')
 |
 */
 const globalMiddleware = [
-  'Adonis/Middleware/Cors',
-  'Adonis/Middleware/BodyParser',
-  'Adonis/Middleware/Shield',
-  'Adonis/Middleware/Flash',
-  'Adonis/Middleware/AuthInit'
+    'Adonis/Middleware/Cors',
+    'Adonis/Middleware/BodyParser',
+    'Adonis/Middleware/Shield',
+    'Adonis/Middleware/Flash',
+    'Adonis/Middleware/AuthInit',
+    'App/Http/Middleware/LogVisitor',
+    'Adonis/Middleware/Ally',
+    'App/Http/Middleware/CaptureContext',
 ]
 
 /*
@@ -29,7 +32,8 @@ const globalMiddleware = [
 |
 */
 const namedMiddleware = {
-  auth: 'Adonis/Middleware/Auth'
+    auth: 'Adonis/Middleware/Auth',
+    admin: 'App/Http/Middleware/AdminRedirect'
 }
 
 /*

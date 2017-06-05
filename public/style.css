@@ -1,3 +1,7 @@
+* {
+  padding: 0;
+  margin: 0; }
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   -webkit-font-feature-settings: "kern", "liga", "pnum";
@@ -6,97 +10,50 @@ body {
   font-feature-settings: "kern", "liga", "pnum";
   -webkit-font-smoothing: antialiased;
   font-weight: lighter;
-  background: #ffffff;
-}
+  background: #ffffff; }
 
-* {
-  padding: 0;
-  margin: 0;
-}
-
-.__banner {
-  background: #744d82;
-  background: -moz-radial-gradient(top, ellipse cover, #744d82 11%, #503d67 99%, #503d67 100%);
-  background: -webkit-gradient(radial, top center, 0, center center, 100%, color-stop(11%, #744d82), color-stop(99%, #503d67), color-stop(100%, #503d67));
-  background: -webkit-radial-gradient(top, ellipse cover, #744d82 11%, #503d67 99%, #503d67 100%);
-  background: -o-radial-gradient(top, ellipse cover, #744d82 11%, #503d67 99%, #503d67 100%);
-  background: -ms-radial-gradient(top, ellipse cover, #744d82 11%, #503d67 99%, #503d67 100%);
-  background: radial-gradient(ellipse at top, #744d82 11%, #503d67 99%, #503d67 100%);
-}
-
-.__banner {
-  height: 80vh;
-  width: 100%;
-  padding-bottom: 30px;
-  justify-content: center;
-  align-items: center;
+header {
+  border-bottom: gray;
+  padding: 24px;
   display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between; }
+
+.release-form {
+  width: 320px;
+  margin: 100px auto; }
+  .release-form input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 4px;
+    margin: 6px 0; }
+  .release-form input[type="text"] {
+    font-size: 13px;
+    border: 1px solid grey; }
+  .release-form input[type="submit"] {
+    background-color: #97DB4F;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer; }
+
+.release-column {
+  width: 1024px;
+  margin: 50px auto; }
+  .release-column .release {
+    width: 100%; }
+    .release-column .release h1 {
+      font-size: 50px;
+      margin: 20px 0; }
+    .release-column .release img {
+      max-width: 100%; }
+    .release-column .release .separator {
+      width: 64px;
+      margin: 64px auto;
+      border-top: 1px solid grey; }
+
+.copyright {
+  margin: 50px 0 20px 0;
   text-align: center;
-}
-
-.__banner .banner__inner h1 {
-  font-weight: 500;
-  font-size: 180px;
-  color: #ffffff;
-}
-
-.__banner .banner__inner h2 {
-  margin-bottom: 25px;
-  text-align: center;
-  letter-spacing: 3px;
-  margin-top: 80px;
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: 16px;
-  color: #ffffff;
-}
-
-.__banner .banner__inner p,
-.__banner .banner__inner a {
-  color: #fff;
-  font-size: 24px;
-  font-weight: 300;
-}
-
-.__banner .banner__inner h2 span {
-  display: inline-block;
-  margin: 0 30px;
-}
-
-.__footer {
-  text-align: center;
-  position: absolute;
-  bottom: 30px;
-  margin: auto;
-  right: 0;
-  left: 0;
-}
-
-.__footer ul {
-  display: table;
-  margin: auto;
-}
-
-.__footer li {
-  border-left: solid 2px #ccc;
-  display: table-cell;
-}
-
-.__footer li:first-child {
-  border: none;
-}
-
-.__footer li a {
-  transition: opacity 0.5s;
-  text-decoration: none;
-  display: inline-block;
-  font-weight: bold;
-  padding: 0px 30px;
-  font-size: 13px;
-  opacity: 0.8;
-  color: #ccc;
-}
-
-.__footer li a:hover {
-  opacity: 1;
-}
+  font-size: 11px; }

@@ -2,7 +2,7 @@
 
 const Release = use("App/Model/Release")
 
-class IndexController {
+class EventController {
 
     * index (request, response) {
         const releases = yield Release.all()
@@ -11,4 +11,5 @@ class IndexController {
 
 }
 
-module.exports = IndexController
+module.exports = EventController
+

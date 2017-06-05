@@ -1,38 +1,37 @@
 <!doctype html>
-<html>
+
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-  <title>AdonisJs - Node.Js MVC Framework</title>
-
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
-  <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Hype Game</title>
+  <meta name="description" content="List of all the most hyped releases in the urban style world">
+  <meta name="author" content="John Sparwasser">
+  <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
+
 <body>
 
-  <section>
-    <div class="__wrapper">
-      {% block content %}{% endblock %}
+    <header>
+        {% if context.isAdmin() %}
+            <p><a href="/">HYPEGAME</a> | <a href="/add-release">Add Release</a></p>
+        {% else %}
+            <p><a href="/">HYPEGAME</a></p>
+        {% endif %}
 
-      {% block footer %}
-        <div class="__footer">
-          <ul>
-            <li>
-              <a href="https://twitter.com/intent/tweet?url=http://adonisjs.com&text=I am using AdonisJs, a practical MVC framework for nodejs&hashtags=nodejs,adonisframework" target="_blank">
-                <img src="/assets/twitter.svg">
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/adonisjs/adonis-framework" target="_blank"><img src="/assets/github.svg"></a>
-            </li>
-          </ul>
-        </div>
-      {% endblock %}
-    </div>
-  </section>
+        {% if context.isAuthenticated() %}
+            <p>Hello {{ context.getUser().username }} | <a href="/logout">Logout</a></p>
+        {% else %}
+            <p><a href="/facebook/login">Login with Facebook</a></p>
+        {% endif %}
+    </header>
+
+
+    {% block content %}
+
+    {% endblock %}
+
+    {% include 'js' %}
 
 </body>
 </html>
+

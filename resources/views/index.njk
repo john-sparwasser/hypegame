@@ -1,16 +1,26 @@
-<!doctype html>
+{% extends 'master' %}
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Hype Game</title>
-  <meta name="description" content="List of all the most hyped releases in the urban style world">
-  <meta name="author" content="John Sparwasser">
-</head>
+{% block content %}
 
-<body>
+    <div class="release-column">
 
-<p>Whatup fam</p>
+    {% for release in releases %}
 
-</body>
-</html>
+        <div class="release">
+            <h1><span class="hype">🔥</span> {{ release.hype }}</h1>
+            <img src="{{ release.image }}" alt="{{ release.name + ' picture' }}" />
+            <h2>{{ release.name }}</h2>
+            <p>{{ release.description }}</p>
+            <div class="separator"></div>
+        </div>
+
+    {% endfor %}
+
+    </div>
+
+    <div class="copyright">
+        <p>Copyright <a href="http://johnsparwasser.com">John Sparwasser</a> <script>document.write(new Date().getFullYear())</script></p>
+    </div>
+
+{% endblock %}
+

@@ -17,4 +17,16 @@
 
 const Route = use('Route')
 
+
 Route.get('/', 'IndexController.index')
+
+// Login routes
+Route.get('logout', 'LoginController.logout')
+Route.get('facebook/login', 'LoginController.facebookRedirect')
+Route.get('facebook/callback', 'LoginController.handleFacebookCallback')
+
+// Admin routes
+Route.group('admin-routes', () => {
+    Route.get('add-release', 'ReleaseController.showAddForm')
+    Route.post('add-release', 'ReleaseController.addRelease')
+}).middleware('admin')

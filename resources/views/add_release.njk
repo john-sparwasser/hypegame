@@ -1,0 +1,15 @@
+{% extends 'master' %}
+
+{% block content %}
+
+    <form class="release-form" action="add-release" method="POST">
+        {{ csrfField }}
+        <input name="name" type="text" placeholder="Name" />
+        <input name="description" type="text" placeholder="Description" />
+        <input name="release_date" type="text" placeholder="Release Date" />
+        <input name="image" type="text" placeholder="Image" />
+        <input type="submit" />
+    </form>
+
+{% endblock %}
+
