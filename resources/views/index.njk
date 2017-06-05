@@ -2,20 +2,17 @@
 
 {% block content %}
 
-    <div class="release-column">
+    <div id="hypegame">
+        <div class="release-column">
 
-    {% for release in releases %}
+        {% for release in releases %}
 
-        <div class="release">
-            <h1><span class="hype">🔥</span> {{ release.hype }}</h1>
-            <img src="{{ release.image }}" alt="{{ release.name + ' picture' }}" />
-            <h2>{{ release.name }}</h2>
-            <p>{{ release.description }}</p>
-            <div class="separator"></div>
+        <release name="{{ release.name }}" description="{{ release.description }}" image="{{ release.image }}" hype="{{ release.hype }}" hypable="true">
+        </release>
+
+        {% endfor %}
+
         </div>
-
-    {% endfor %}
-
     </div>
 
     <div class="copyright">

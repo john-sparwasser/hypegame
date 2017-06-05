@@ -5,7 +5,7 @@ var vueify = require("vueify");
 var sass = require("gulp-sass");
 
 gulp.task('vue', function() {
-    return browserify("./resources/js/Vue/app.js")
+    return browserify("./resources/js/app.js")
         .transform(vueify)
         .bundle()
         .pipe(fs.createWriteStream("./public/hypegame.js"))
@@ -18,6 +18,6 @@ gulp.task('sass', function() {
 });
 
 gulp.task('default', ['vue', 'sass'], function() {
-    gulp.watch('./resources/js/Vue/*.js', ['vue']);
+    gulp.watch('./resources/js/*.js', ['vue']);
     gulp.watch('./resources/sass/*.scss', ['sass']);
 });
