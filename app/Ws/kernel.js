@@ -12,7 +12,7 @@ const Ws = use('Ws')
 |
 */
 const globalMiddleware = [
-  'Adonis/Middleware/AuthInit'
+    'Adonis/Middleware/AuthInit',
 ]
 
 /*

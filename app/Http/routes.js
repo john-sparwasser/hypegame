@@ -9,10 +9,6 @@
 | all major HTTP conventions to keep your routes file descriptive and
 | clean.
 |
-| @example
-| Route.get('/user', 'UserController.index')
-| Route.post('/user', 'UserController.store')
-| Route.resource('user', 'UserController')
 */
 
 const Route = use('Route')
@@ -24,6 +20,10 @@ Route.get('/', 'IndexController.index')
 Route.get('logout', 'LoginController.logout')
 Route.get('facebook/login', 'LoginController.facebookRedirect')
 Route.get('facebook/callback', 'LoginController.handleFacebookCallback')
+
+Route.group('auth-routes', () => {
+    Route.post('release/:id/increment_hype', 'HypeController.increment')
+}).middleware('auth')
 
 // Admin routes
 Route.group('admin-routes', () => {

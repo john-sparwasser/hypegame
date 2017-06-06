@@ -2,21 +2,28 @@
 
 {% block content %}
 
-    <div id="hypegame">
-        <div class="release-column">
+    <div class="release-column">
 
-        {% for release in releases %}
+    {% for release in releases %}
 
-        <release name="{{ release.name }}" description="{{ release.description }}" image="{{ release.image }}" hype="{{ release.hype }}" hypable="true">
-        </release>
+    <release
+        rid="{{ release.id }}"
+        name="{{ release.name }}"
+        description="{{ release.description }}"
+        image="{{ release.image }}"
+        hype="{{ release.hype }}"
+        hyped="{{ (release.hype_events.length > 0) }}"
+        csrf="{{ csrfToken }}"
+        authenticated="{{ context.isAuthenticated() }}"
+        username="{{ context.getUserName() }}"
+        user_id="{{ context.getUserId() }}"
+        visitor_id="{{ context.getVisitorId() }}"
+        ip_address="{{ context.getIpAddress() }}"
+    >
+    </release>
 
-        {% endfor %}
+    {% endfor %}
 
-        </div>
-    </div>
-
-    <div class="copyright">
-        <p>Copyright <a href="http://johnsparwasser.com">John Sparwasser</a> <script>document.write(new Date().getFullYear())</script></p>
     </div>
 
 {% endblock %}

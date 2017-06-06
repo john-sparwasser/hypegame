@@ -25,12 +25,19 @@
         {% endif %}
     </header>
 
+    <div id="hypegame">
 
-    {% block content %}
+        {% block content %}
 
-    {% endblock %}
+        {% endblock %}
+
+    </div>
 
     {% include 'js' %}
+
+    <div class="copyright">
+        <p>Copyright <a href="http://johnsparwasser.com">John Sparwasser</a> <script>document.write(new Date().getFullYear())</script></p>
+    </div>
 
 </body>
 </html>

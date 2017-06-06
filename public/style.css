@@ -2,6 +2,11 @@
   padding: 0;
   margin: 0; }
 
+a, a:visited {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none; }
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   -webkit-font-feature-settings: "kern", "liga", "pnum";
@@ -39,19 +44,24 @@ header {
     cursor: pointer; }
 
 .release-column {
-  width: 1024px;
+  width: 800px;
   margin: 50px auto; }
   .release-column .release {
     width: 100%; }
     .release-column .release h1 {
       font-size: 50px;
-      margin: 20px 0; }
+      margin: 20px 0;
+      color: #FF9933; }
+      .release-column .release h1.hypable {
+        color: #000; }
     .release-column .release img {
       max-width: 100%; }
     .release-column .release .separator {
       width: 64px;
       margin: 64px auto;
       border-top: 1px solid grey; }
+    .release-column .release .hype {
+      cursor: pointer; }
 
 .copyright {
   margin: 50px 0 20px 0;
