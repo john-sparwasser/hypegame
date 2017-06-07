@@ -27,9 +27,9 @@ Vue.component('release', {
     methods: {
 
         incrementHype() {
-            if (this.releaseHypable) {
+            if (!this.releaseHyped && this.userAuthenticated) {
                 this.releaseHype++
-                this.releaseHypable = false
+                this.releaseHyped = true
                 this.$http.post('/release/' + this.releaseId + '/increment_hype', {
                     "_csrf": this.csrfToken
                 })
