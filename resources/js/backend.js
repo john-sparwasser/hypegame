@@ -1,4 +1,4 @@
-const io = ws('http://localhost:3333', {})
+const io = ws('http://hypega.me', {})
 const client = io.channel('analytics')
 
 let analytics = []
