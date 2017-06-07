@@ -11,7 +11,7 @@ class Context {
             this._user_id = false
             this._user_name = false
         } else {
-            this._admin = user.admin
+            this._admin = (user.admin === 1)
             this._authenticated = true
             this._user_id = this._user.id
             this._user_name = this._user.username
