@@ -10,7 +10,7 @@ class LoginController {
 
     * handleFacebookCallback (request, response) {
         const fbUser = yield request.ally.driver('facebook').getUser()
-
+        
         const searchAttr = {
             email: fbUser.getEmail()
         }
@@ -21,7 +21,8 @@ class LoginController {
             username: fbUser.getName(),
             provider: 'facebook',
             provider_id: fbUser.getId(),
-            provider_token: fbUser.getAccessToken()
+            provider_token: fbUser.getAccessToken(),
+            visitor_id: request.context.getVisitorId()
         }
 
         const user = yield User.findOrCreate(searchAttr, newUser) 
