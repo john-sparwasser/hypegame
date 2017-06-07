@@ -19,9 +19,9 @@
         {% endif %}
 
         {% if context.isAuthenticated() %}
-            <p>Hello {{ context.getUser().username }} | <a href="/logout">Logout</a></p>
+            <p><a href="/analytics">Analytics</a> | Hello {{ context.getUser().username }} | <a href="/logout">Logout</a></p>
         {% else %}
-            <p><a href="/facebook/login">Login with Facebook</a></p>
+            <p><a href="/analytics">Analytics</a> | <a href="/facebook/login">Login with Facebook</a></p>
         {% endif %}
     </header>
 
@@ -33,7 +33,7 @@
 
     </div>
 
-    {% include 'js' %}
+    {% include 'frontend-js' %}
 
     <div class="copyright">
         <p>Copyright <a href="http://johnsparwasser.com">John Sparwasser</a> <script>document.write(new Date().getFullYear())</script></p>

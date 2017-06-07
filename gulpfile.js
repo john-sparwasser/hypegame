@@ -4,11 +4,18 @@ var browserify = require("browserify");
 var vueify = require("vueify");
 var sass = require("gulp-sass");
 
-gulp.task('vue', function() {
-    return browserify("./resources/js/app.js")
+gulp.task('vue-frontend', function() {
+    return browserify("./resources/js/frontend.js")
         .transform(vueify)
         .bundle()
-        .pipe(fs.createWriteStream("./public/hypegame.js"))
+        .pipe(fs.createWriteStream("./public/frontend.js"))
+});
+
+gulp.task('vue-backend', function() {
+    return browserify("./resources/js/backend.js")
+        .transform(vueify)
+        .bundle()
+        .pipe(fs.createWriteStream("./public/backend.js"))
 });
 
 gulp.task('sass', function() {
@@ -17,7 +24,7 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('./public'));
 });
 
-gulp.task('default', ['vue', 'sass'], function() {
-    gulp.watch('./resources/js/*.js', ['vue']);
+gulp.task('default', ['vue-frontend', 'vue-backend', 'sass'], function() {
+    gulp.watch('./resources/js/*.js', ['vue-frontend', 'vue-backend']);
     gulp.watch('./resources/sass/*.scss', ['sass']);
 });

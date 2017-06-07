@@ -21,6 +21,8 @@ Route.get('logout', 'LoginController.logout')
 Route.get('facebook/login', 'LoginController.facebookRedirect')
 Route.get('facebook/callback', 'LoginController.handleFacebookCallback')
 
+Route.get('analytics', 'AnalyticController.index')
+
 Route.group('auth-routes', () => {
     Route.post('release/:id/increment_hype', 'HypeController.increment')
 }).middleware('auth')

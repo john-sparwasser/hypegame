@@ -63,6 +63,17 @@ header {
     .release-column .release .hype {
       cursor: pointer; }
 
+.analytics {
+  width: 600px;
+  margin: 50px auto; }
+  .analytics h1 {
+    text-align: center; }
+  .analytics .analytics-list {
+    list-style: none;
+    margin: 64px 0; }
+    .analytics .analytics-list li {
+      margin: 24px 0; }
+
 .copyright {
   margin: 50px 0 20px 0;
   text-align: center;
