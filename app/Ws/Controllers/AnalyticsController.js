@@ -11,7 +11,7 @@ class AnalyticsController {
 
     onMessage(message) {
         const payload = {
-            Data: Buffer.from(message, 'base64'),
+            Data: new Buffer(message).toString('base64'),
             StreamName: 'hypegame',
             PartitionKey: 'analytics'
         }
